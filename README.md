@@ -25,19 +25,18 @@ Desenvolvido para o Desafio de Dados da WoMakersCode, este pipeline integra múl
 ---
 
 ## 🏗 Arquitetura do Projeto
-```mermaid
+
 graph LR
     A[Fontes de Dados] -->|Python/Pandas| B(Extração & Carga)
     B -->|Raw Data| C[(SQLite DW)]
     C -->|dbt| D[Transformação & Modelagem]
     D -->|Data Mart| E(Data mart (modelo final))
     E --> F[Análise]
-
     subgraph Orquestrador
         G[Prefect] -.-> B
         G -.-> D
     end
-```
+
 
 1. Extração e Carga – Python
 - Coleta e ingestão de dados em múltiplos formatos (CSV, API REST, banco SQL e JSON).

@@ -1,4 +1,4 @@
-# Pipeline ELT - Análise do Cenário das Mulheres na Tecnologia
+# 📓 Pipeline ELT - Análise do Cenário das Mulheres na Tecnologia
 
 Este projeto apresenta um pipeline ELT(Extract, Load, Transform), criado para reunir e analisar dados sobre a presença das mulheres no mercado global de tecnologia.
 
@@ -25,27 +25,7 @@ Desenvolvido para o Desafio de Dados da WoMakersCode, este pipeline integra múl
 ---
 
 ## 🏗 Arquitetura do Projeto
-```mermaid
-graph TD
-    subgraph Orquestração
-        F[Prefect]
-    end
 
-    A[Fontes de Dados (CSV, API, SQL, JSON)] -->|Coleta e Ingestão| B(Extração & Carga - Python)
-    
-    F -.-> B
-    
-    B -->|Raw Data| C[(Data Warehouse - SQLite)]
-    
-    C -->|SQL| D(Transformação - dbt)
-    
-    F -.-> D
-    
-    subgraph Modelagem (dbt)
-        D -->|Limpeza/Padronização| D1[Staging Layer]
-        D1 -->|Agregação/Regras de Negócio| D2[Data Mart (Modelo Final)]
-    end
-```
 1. Extração e Carga – Python
 - Coleta e ingestão de dados em múltiplos formatos (CSV, API REST, banco SQL e JSON).
 
@@ -60,7 +40,6 @@ graph TD
 
 4. Orquestração – Prefect
 - Automação do fluxo ELT com monitoramento e tolerância a falhas.
-
 
 5. Visualização – Power BI
 - Dashboard final contendo as análises.

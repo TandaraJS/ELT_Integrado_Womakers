@@ -25,32 +25,38 @@ Desenvolvido para o Desafio de Dados da WoMakersCode, este pipeline integra múl
 ---
 
 ## 🏗 Arquitetura do Projeto
-
-graph LR
-    A[Fontes de Dados] -->|Python/Pandas| B(Extração & Carga)
-    B -->|Raw Data| C[(SQLite DW)]
-    C -->|dbt| D[Transformação & Modelagem]
-    D -->|Data Mart| E(Data mart (modelo final))
-    E --> F[Análise]
-    subgraph Orquestrador
-        G[Prefect] -.-> B
-        G -.-> D
+```mermaid
+graph TD
+    subgraph Orquestração
+        F[Prefect]
     end
 
-
+    A[Fontes de Dados (CSV, API, SQL, JSON)] -->|Coleta e Ingestão| B(Extração & Carga - Python)
+    
+    F -.-> B
+    
+    B -->|Raw Data| C[(Data Warehouse - SQLite)]
+    
+    C -->|SQL| D(Transformação - dbt)
+    
+    F -.-> D
+    
+    subgraph Modelagem (dbt)
+        D -->|Limpeza/Padronização| D1[Staging Layer]
+        D1 -->|Agregação/Regras de Negócio| D2[Data Mart (Modelo Final)]
+    end
+```
 1. Extração e Carga – Python
 - Coleta e ingestão de dados em múltiplos formatos (CSV, API REST, banco SQL e JSON).
 
 2. Data Warehouse – SQLite
 - Armazenamento dos dados brutos na camada **Raw Data**.
 
-
 3. Transformação – dbt
 - Processos de limpeza, padronização e modelagem.  
 - Estruturação das camadas:
   - **Staging**
   - **Data Mart**
-
 
 4. Orquestração – Prefect
 - Automação do fluxo ELT com monitoramento e tolerância a falhas.

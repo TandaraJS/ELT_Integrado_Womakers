@@ -7,14 +7,14 @@ Desenvolvido para o Desafio de Dados da WoMakersCode, este pipeline integra múl
 ---
 ## 🛠 Tecnologias Utilizadas
 
-- **Python** – Linguagem principal do projeto  
-- **Pandas** – Manipulação, limpeza e tratamento inicial dos dados  
-- **SQLite** – Data Warehouse local para armazenamento na camada *Raw*  
-- **dbt** – Transformações, padronização e modelagem dos dados (*Staging* e *Data Mart*)  
-- **Prefect** – Orquestração e monitoramento do fluxo ELT  
-- **Logging** – Registro de eventos e erros da pipeline  
-- **Requests** – Consumo de APIs externas  
-- **Microsoft Power BI** – Construção do dashboard analítico final  
+- **Python** - Linguagem principal do projeto  
+- **Pandas** - Manipulação, limpeza e tratamento inicial dos dados  
+- **SQLite** - Data Warehouse local para armazenamento na camada *Raw*  
+- **dbt** - Transformações, padronização e modelagem dos dados (*Staging* e *Data Mart*)  
+- **Prefect** - Orquestração e monitoramento do fluxo ELT  
+- **Logging** - Registro de eventos e erros da pipeline  
+- **Requests** - Consumo de APIs externas  
+- **Microsoft Power BI** - Construção do dashboard analítico final  
 ---
 ## 📂 Fontes de Dados
 
@@ -30,19 +30,21 @@ graph LR
     A[Fontes de Dados] -->|Python/Pandas| B(Extração & Carga)
     B -->|Raw Data| C[(SQLite DW)]
     C -->|dbt| D[Transformação & Modelagem]
-    D -->|Tabelas Finais| E(Data mart (modelo final))
+    D -->|Data Mart| E(Data mart (modelo final))
     E --> F[Análise]
 
     subgraph Orquestrador
         G[Prefect] -.-> B
         G -.-> D
-    end 
+    end
 ```
+
 1. Extração e Carga – Python
 - Coleta e ingestão de dados em múltiplos formatos (CSV, API REST, banco SQL e JSON).
 
 2. Data Warehouse – SQLite
 - Armazenamento dos dados brutos na camada **Raw Data**.
+
 
 3. Transformação – dbt
 - Processos de limpeza, padronização e modelagem.  
@@ -50,12 +52,13 @@ graph LR
   - **Staging**
   - **Data Mart**
 
+
 4. Orquestração – Prefect
 - Automação do fluxo ELT com monitoramento e tolerância a falhas.
 
+
 5. Visualização – Power BI
 - Dashboard final contendo as análises.
-  
 ---
 ## 🚀 Como Executar o Projeto
 
@@ -73,7 +76,7 @@ O notebook foi desenvolvido para rodar com facilidade no Google Colab, onde toda
 
   - Execute a primeira célula para instalar as dependências:
 
-`!pip install pandas prefect dbt-sqlite requests`
+        `!pip install pandas prefect dbt-sqlite requests`
 
   - Siga a ordem das células, que incluem:
 
@@ -83,7 +86,7 @@ O notebook foi desenvolvido para rodar com facilidade no Google Colab, onde toda
     
     - Criação do projeto e modelos dbt
     
-    Execução do fluxo orquestrado pelo Prefect
+    - Execução do fluxo orquestrado pelo Prefect
 
 ## 📊 Dashboard Interativo
 

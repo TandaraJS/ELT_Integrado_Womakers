@@ -90,6 +90,8 @@ Com a modelagem final (dim_desenvolvedoras), é possível investigar:
 
 WoMakersCode 
 
+
 Tandara Jesus dos Santos
+
 ---
 📘Projeto criado para fins educacionais.

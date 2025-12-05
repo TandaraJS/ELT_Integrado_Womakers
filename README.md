@@ -87,7 +87,9 @@ Com a modelagem final (dim_desenvolvedoras), é possível investigar:
   - Quantidade de mulheres do Brasil e das Américas
 --- 
 ✒️ Autores
+
 WoMakersCode 
+
 Tandara Jesus dos Santos
 ---
 📘Projeto criado para fins educacionais.

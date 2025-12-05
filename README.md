@@ -74,8 +74,8 @@ O notebook foi desenvolvido para rodar com facilidade no Google Colab, onde toda
 
 ## 📊 Dashboard Interativo
 
+<img width="1013" height="564" alt="image" src="https://github.com/user-attachments/assets/9d1a2e86-31a9-4f3b-b51d-49cb94cd4ffd" />
 
-Perfil das Mulheres na Área de Dados
 
 ## Perguntas de Negócio Respondidas
 
@@ -85,9 +85,9 @@ Com a modelagem final (dim_desenvolvedoras), é possível investigar:
   - Bancos de dados mais utilizados
   - Utilização das principais linguagens de dados (Python, SQL e R)
   - Quantidade de mulheres do Brasil e das Américas
-    
+--- 
 ✒️ Autores
 WoMakersCode 
 Tandara Jesus dos Santos
-
+---
 📘Projeto criado para fins educacionais.

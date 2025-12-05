@@ -60,7 +60,7 @@ O notebook foi desenvolvido para rodar com facilidade no Google Colab, onde toda
 
   - Execute a primeira célula para instalar as dependências:
 
-        `!pip install pandas prefect dbt-sqlite requests`
+        !pip install pandas prefect dbt-sqlite requests
 
   - Siga a ordem das células, que incluem:
 
